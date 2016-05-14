@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Database Management Systems</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <% if (typeof js_includes !== 'undefined') { %>
+    <% for(var i=0; i < js_includes.length; i++) { %>
+    <script src="<%= js_includes[i] %>"></script>
+    <% }%>
+    <% }%>
+</head>
+<body>
+<div style="float:right;">
+    <% if(typeof firstname !== "undefined") { %>
+    Welcome, <%= firstname %>
+    <% } else { %>
+    <a href="/signup">Signup</a> <a href="/login">Login</a>
+    <% } %>
+</div>
+<div id="header">
+    <!--<img src="http://www.cs.sonoma.edu/~haderman/cs355/labs/cs355.png" alt="cs355 header">-->
+    CS355 Database Management Systems
+</div>
+<div id="nav">
+    <a href="http://www.cs.sonoma.edu/~haderman/">Haderman</a>
+    <br />
+    <a href="http://localhost:3000/helloworld.html">Absolute Link Example</a>
+    <br />
+    <a href="/movie/all">Get All Movies</a>
+    <br />
+    <a href="/movie/new">Insert New Movie</a> <br />
+    <a href="http://cs.sonoma.edu/~haderman/cs355/">CS355</a> <br />
+    <a href="http://cs.sonoma.edu/">CS Department</a> <br />
+    <a href="http://www.sonoma.edu/">Sonoma State University</a> <br />
+    <a href="/users/all">Get All Users</a> <br />
+    <a href="/users/create">Create a New User</a> <br />
+    <a href="/genre/new">Create a New Genre</a> <br />
+    <a href="/state/new">Create a New State</a> <br />
+    <% if(typeof firstname !== "undefined") { %><a href="/logout">Logout</a><% } %>
+</div>
