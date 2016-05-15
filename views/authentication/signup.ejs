@@ -1,0 +1,38 @@
+<% var js_includes = ['https://code.jquery.com/jquery-1.12.3.min.js', '/javascripts/signup_ajax.js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'] %>
+<% include ../partials/header %>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"
+        integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<h1>Let's get this party started!!!</h1>
+<form class="form-horizontal">
+    <div class="col-md-offset-3 col-md-4">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" name="username"/>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email"/>
+        </div>
+        <div class="form-group">
+            <label for="birthdate">Birthdate:</label>
+            <input type="text" class="form-control" id="birthdate">
+        </div>
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <select class="form-control">
+                <option value="F">F</option>
+                <option value="M">M</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password"/>
+        </div>
+        <div class="form-group">
+            <button id="signupBtn" class="btn btn-success">Signup!</button>
+        </div>
+    </div>
+</form>
+
+<% include ../partials/footer %>

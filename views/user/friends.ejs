@@ -1,0 +1,64 @@
+<% var js_includes = ['https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js', '/javascripts/friends.js'] %>
+<% include ../partials/header %>
+<h1>Say hello to your little friends!</h1>
+<form class="form-inline">
+    <div class="form-group">
+        <button id="addFriend" class="btn btn-success">Add Friend</button>
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" id="friendName">
+    </div>
+</form>
+<div>
+    <div style="padding:10px">
+        <% if(friends.length > 0) { %>
+        <table border="1">
+            <tr>
+                <th>Friend</th>
+                <th>No more</th>
+            </tr>
+            <% for (var i = 0; friends.length > i; i++) { %>
+            <tr>
+                <td><a href="/user/?username=<%= friends[i].username %>"><%= friends[i].username %></a></td>
+                <td>
+                    <button class="btn btn-danger" value="<%= friends[i].username %>">Remove</button>
+                </td>
+            </tr>
+            <% } %>
+            <% } else { %>
+            <p>You don't have any friends :(</p>
+            <% } %>
+        </table>
+    </div>
+
+    <h1>Here's what your friends have been up to. CAN YOU COMPETE?!</h1>
+
+    <div>
+        <% if(workouts.length > 0) { %>
+        <table border="1">
+            <tr>
+                <th>Username</th>
+                <th>Exercise</th>
+                <th>Sets</th>
+                <th>Reps</th>
+                <th>Added Weight</th>
+                <th>Time recorded</th>
+            </tr>
+            <% for (var i = 0; workouts.length > i; i++) { %>
+            <tr>
+                <td><%= workouts[i].username %></td>
+                <td><%= workouts[i].name %></td>
+                <td><%= workouts[i].sets %></td>
+                <td><%= workouts[i].reps %></td>
+                <td><%= workouts[i].extra_weight %></td>
+                <td><%= workouts[i].time.toString().slice(0, 24) %></td>
+            </tr>
+            <% } %>
+        </table>
+        <% } else { %>
+        <p>Sorry buddy, your friends suck...if you even have any!!!</p>
+        <% } %>
+    </div>
+</div>
+
+<% include ../partials/footer %>

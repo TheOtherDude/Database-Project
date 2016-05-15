@@ -1,0 +1,33 @@
+<% var js_includes = ['https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js', '/javascripts/hall.js']%>
+<% include ../partials/header %>
+<h1>Welcome to the Hall of Fame!!!</h1>
+<h3>Now you can see who is really killing it!</h3>
+<h4>Lifetime Pushups</h4>
+<form class="form-inline">
+    <div class="form-group">
+        <button id="setThreshold" class="btn btn-default">Raise the bar!</button>
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" id="threshold" value="<%=threshold%>">
+    </div>
+</form>
+<div style="padding:10px">
+    <% if(hof.length > 0) { %>
+    <table border="1">
+        <tr>
+            <th>Username</th>
+            <th>Lifetime Pushups</th>
+        </tr>
+        <% for (var i=0; hof.length > i; i++) { %>
+        <tr>
+            <td><%=hof[i].username%></td>
+            <td><%=hof[i].LifetimePushups%></td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    <p>No one is THAT good!</p>
+    <% } %>
+</div>
+
+<% include ../partials/footer %>

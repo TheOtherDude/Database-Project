@@ -7,10 +7,8 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
-var movie = require('./routes/movie_route');
-var genre = require('./routes/genre_routes');
-var state = require('./routes/state_routes');
+var user = require('./routes/user_routes');
+var hof = require('./routes/hof_routes');
 
 
 var app = express();
@@ -44,10 +42,8 @@ var restrict = function (req, res, next){
     res.redirect('/login');  // they aren't so ask them to login
   }
 };
-app.use('/users', restrict, users);
-app.use('/movie', restrict, movie);
-app.use('/genre', restrict, genre);
-app.use('/state', restrict, state);
+app.use('/user', restrict, user);
+app.use('/hof', restrict, hof);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,0 +1,32 @@
+<% var js_includes = ['https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js', '/javascripts/addWorkout.js']%>
+<% include ../partials/header %>
+<h1>Add your next soul-ripping workout here!!</h1>
+<form class="form-horizontal">
+    <div class="col-md-offset-1 col-md-2">
+        <div class="form-group">
+            <label for="exercise">Exercise</label>
+            <select class="form-control" id="exercise">
+                <% for( var i = 0; i < exercises.length; i++) { %>
+                <option value="<%= exercises[i].name %>"><%= exercises[i].name %></option>
+                <% } %>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="sets">Sets</label>
+            <input id="sets" class="form-control" type="number" min="1">
+        </div>
+        <div class="form-group">
+            <label for="reps">Reps</label>
+            <input id="reps" class="form-control" type="number" min="1">
+        </div>
+        <div class="form-group">
+            <label for="extra_weight">Added Weight</label>
+            <input id="extra_weight" class="form-control" type="number" min="0">
+        </div>
+        <div class="form-group">
+            <button id="submitBtn" class="btn btn-submit">Submit</button>
+        </div>
+    </div>
+
+</form>
+<% include ../partials/footer %>

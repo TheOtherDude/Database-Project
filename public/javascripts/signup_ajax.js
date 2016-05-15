@@ -4,18 +4,20 @@
 
 signupAjax = function() {
     var payload = {
+        username: $('#username').val(),
         email: $('#email').val(),
-        password: $('#password').val(),
-        firstname: $('#firstname').val(),
-        lastname: $('#lastname').val(),
-        state_id: parseInt($('#state').val()) + 1
+        birtdate: $("#birthdate").val(),
+        gender: $("#gender").val(),
+        password: $('#password').val()
     };
 
     // Next we configure the jQuery ajax call
     $.post('/signup', payload, function(data) {
-        console.log(data);
-        console.log(payload);
-        window.location.replace('/');
+        if (typeof data === "object") {
+            $('#message').html('Hmm, technical difficulties...');
+        } else {
+            window.location.replace('/');
+        }
     });
 }
 
@@ -25,5 +27,9 @@ $(document).ready(function() {
         e.preventDefault();
         signupAjax();
     })
+
+    $(function() {
+        $( "#birthdate" ).datepicker();
+    });
 
 });

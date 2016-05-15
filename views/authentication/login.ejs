@@ -1,11 +1,20 @@
-<% var js_includes = ['https://code.jquery.com/jquery-1.12.3.min.js', '/javascripts/login_ajax.js']%>
+<% var js_includes = ['https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js', '/javascripts/login_ajax.js']%>
 <% include ../partials/header %>
 
 <h1>Login</h1>
-<form>
-    <label for="email">Email:</label><input type="text" id="email"/><br />
-    <label for="password">Password:</label><input type="password" id="password"/><br />
-    <button id="loginBtn">Go!</button>
+<form class="form-inline">
+    <div class="form-group">
+    <label for="username">Username:</label>
+        <input type="text" class="form-control" id="username"/>
+    </div>
+    <div class="form-group">
+    <label for="password">Password:</label>
+        <input type="password" class="form-control" id="password"/><br />
+    </div>
+    <div class="form-group">
+    <button class="btn btn-default" id="loginBtn">Time to rage!</button>
+    </div>
+    <div id="message"></div>
 </form>
 
 <% include ../partials/footer %>

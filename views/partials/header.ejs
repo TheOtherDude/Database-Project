@@ -1,40 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Database Management Systems</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>The Workout Game</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
     <% if (typeof js_includes !== 'undefined') { %>
-    <% for(var i=0; i < js_includes.length; i++) { %>
+    <% for(var i = 0; i < js_includes.length; i++) { %>
     <script src="<%= js_includes[i] %>"></script>
-    <% }%>
-    <% }%>
+    <% } %>
+    <% } %>
 </head>
 <body>
-<div style="float:right;">
-    <% if(typeof firstname !== "undefined") { %>
-    Welcome, <%= firstname %>
-    <% } else { %>
-    <a href="/signup">Signup</a> <a href="/login">Login</a>
-    <% } %>
-</div>
-<div id="header">
-    <!--<img src="http://www.cs.sonoma.edu/~haderman/cs355/labs/cs355.png" alt="cs355 header">-->
-    CS355 Database Management Systems
-</div>
-<div id="nav">
-    <a href="http://www.cs.sonoma.edu/~haderman/">Haderman</a>
-    <br />
-    <a href="http://localhost:3000/helloworld.html">Absolute Link Example</a>
-    <br />
-    <a href="/movie/all">Get All Movies</a>
-    <br />
-    <a href="/movie/new">Insert New Movie</a> <br />
-    <a href="http://cs.sonoma.edu/~haderman/cs355/">CS355</a> <br />
-    <a href="http://cs.sonoma.edu/">CS Department</a> <br />
-    <a href="http://www.sonoma.edu/">Sonoma State University</a> <br />
-    <a href="/users/all">Get All Users</a> <br />
-    <a href="/users/create">Create a New User</a> <br />
-    <a href="/genre/new">Create a New Genre</a> <br />
-    <a href="/state/new">Create a New State</a> <br />
-    <% if(typeof firstname !== "undefined") { %><a href="/logout">Logout</a><% } %>
-</div>
+<div class="container-fluid">
+    <div class="pull-right" style="color:white">
+        <% if(typeof firstname !== "undefined") { %>
+        Welcome, <%= firstname %>
+        <% } else { %>
+        <a href="/signup">Signup</a> <a href="/login">Login</a>
+        <% } %>
+    </div>
+    <div id="header" class="row">
+        The Workout Game
+    </div>
+    <!--    <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Page 1</a></li>
+                    <li><a href="#">Page 2</a></li>
+                    <li><a href="#">Page 3</a></li>
+                </ul>
+            </div>
+        </nav>-->
+    <div class="row">
+        <div id="nav" class="col-lg-1 col-md-2 col-xs-5">
+            <a href="/user/">Workouts!</a>
+            <br/>
+            <a href="/user/friends">Friends</a>
+            <br/>
+            <a href="/hof/hall">Hall of Fame</a>
+            <br/>
+            <a href="/about">About</a>
+            <br/>
+            <% if(typeof firstname !== "undefined") { %>
+            <a href="/logout">Logout</a><br/>
+            <% } %>
+        </div>
+        <div id="content" class="col-lg-11 col-md-10 col-xs-7">

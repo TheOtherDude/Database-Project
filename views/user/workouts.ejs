@@ -1,0 +1,29 @@
+<% include ../partials/header %>
+<% if (friends !== true) { %>
+<a href="/user/addWorkout">Add a new workout!</a>
+<p>View your workouts here</p>
+<% } %>
+<div>
+    <% if(workouts.length > 0) { %>
+    <table border="1">
+        <tr>
+            <th>Exercise</th>
+            <th>Sets</th>
+            <th>Reps</th>
+            <th>Added Weight</th>
+            <th>Time recorded</th>
+        </tr>
+        <% for (var i=0; workouts.length > i; i++) { %>
+        <tr>
+            <td><%=workouts[i].name%></td>
+            <td><%=workouts[i].sets%></td>
+            <td><%=workouts[i].reps%></td>
+            <td><%=workouts[i].extra_weight%></td>
+            <td><%=workouts[i].time.toString().slice(0, 24)%></td>
+        </tr>
+        <% } %>
+    </table>
+    <% } %>
+</div>
+
+<% include ../partials/footer %>
